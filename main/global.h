@@ -2,9 +2,9 @@
 #define GLOBAL_H_
 
 // Firmware and hardware versions
-#define FIRMWARE_VERSION "PB28_H3.2_V0.1"
+#define FIRMWARE_VERSION "PB28_H3.2_V0.2"
 #define HW_VERSION "PB_A_1.3.2"
-#define SW_VERSION "H3.2_V0.1"
+#define SW_VERSION "H3.2_V0.2"
 #define MODEL "PB28"
 
 extern char model_info[10];

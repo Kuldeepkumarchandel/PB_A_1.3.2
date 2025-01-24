@@ -12,6 +12,9 @@
 #define BUZZER_OFF                  gpio_set_level(BUZZER,0);
 
 #define GAIN_SLOT_CTRL1             GPIO_NUM_44
+#define GAIN_SLOT_HIGH              gpio_set_level(GAIN_SLOT_CTRL1,1);
+#define GAIN_SLOT_LOW               gpio_set_level(GAIN_SLOT_CTRL1,0);
+#define GAIN_SLOT_MEDIUM            gpio_set_direction(GAIN_SLOT_CTRL1,GPIO_MODE_INPUT);
 
 #define CHRG_CTRL                   GPIO_NUM_4
 #define CHARGING_ENABLE             gpio_set_level(CHRG_CTRL,0);

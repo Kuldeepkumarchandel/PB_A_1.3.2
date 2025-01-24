@@ -10,6 +10,18 @@ void Start_play_sound()
 {
     // g_sound_index_value = 1;
     g_sound_index_value = 5;
+    if(eeprom.alarm_volume < 30)
+    {
+        GAIN_SLOT_HIGH;
+    }
+    else if((eeprom.alarm_volume < 60) && (eeprom.alarm_volume >= 30))
+    {
+        GAIN_SLOT_MEDIUM;
+    }
+    else if(eeprom.alarm_volume >= 60)
+    {
+        GAIN_SLOT_LOW;
+    }
 }
 /// @brief 
 /// @param info 
@@ -58,8 +70,8 @@ void Sound_play_task()
         {
             if(channel_enabled==0)
             {
-            ESP_ERROR_CHECK(i2s_channel_enable(tx_chan));
-            channel_enabled=1;
+                ESP_ERROR_CHECK(i2s_channel_enable(tx_chan));
+                channel_enabled=1;
             }
             
             f.g_audio_ON = 1; offset = 496 + 44;

@@ -803,15 +803,12 @@
             eeprom.config_alarm_time[i].Box_ID = (temp[0] - '0') * 10 + (temp[1] - '0');
             if(strstr(model_info,"PB28"))
             {
-                    if(eeprom.config_alarm_time[i].Box_ID>27){flag=2;break;}
+                if(eeprom.config_alarm_time[i].Box_ID>27){flag=2;break;}
             }
             else if(strstr(model_info,"PB29"))
             {
-                    if(eeprom.config_alarm_time[i].Box_ID>28){flag=2;break;}
+                if(eeprom.config_alarm_time[i].Box_ID>28){flag=2;break;}
             }
-           
-           
-           
             //eeprom.config_alarm_time[i].Box_ID -= 1;
             if(((temp[3] == '-') && (temp[4] == '2')))
             {
@@ -844,6 +841,7 @@
             eeprom.alarm_volume = atoi(temp);
         }
         ESP_LOGI("alarm_volume", "%s,", temp);
+        
         cnt_temp++;
         memset(temp, 0x00, sizeof(temp)); get_parameter_from_data((char*)&temp,(char*)data, ",",cnt_temp,0,0,0,10); 
         ESP_LOGI("time_mode", "%s,", temp);
@@ -859,8 +857,9 @@
             }
         }
         cnt_temp++;
-         memset(temp, 0x00, sizeof(temp)); get_parameter_from_data((char*)&temp,(char*)data, ",",cnt_temp,0,0,0,10);
-         ESP_LOGI("alarm_gap", "%s,", temp);
+        memset(temp, 0x00, sizeof(temp)); get_parameter_from_data((char*)&temp,(char*)data, ",",cnt_temp,0,0,0,10);
+        ESP_LOGI("alarm_gap", "%s,", temp);
+        
         if(!((temp[0] == '-') && (temp[1] == '1')))
         {
             eeprom.alarm_gap =  (temp[0] - '0') * 100 + (temp[1] - '0') * 10 + (temp[2] - '0');
