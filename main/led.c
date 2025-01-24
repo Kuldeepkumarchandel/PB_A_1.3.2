@@ -93,12 +93,12 @@ void Run_LED_Matrix(char* led_matrix)
 	char temp=0;
 	int i=0;
 	for(i=0;i<8;i++)
+	{
+		if(led_matrix[i]!=0)
 		{
-			if(led_matrix[i]!=0)
-			{
-				break;
-			}
+			break;
 		}
+	}
 	
 	// if(i<8)
 	{
@@ -119,7 +119,8 @@ void Run_LED_Matrix(char* led_matrix)
 				//}
 				if(f.g_buzzer_ON == 1 || f.g_buzzer_independent_ON == 1)
 				{
-					send_data_on_595((0x01<<i)|0x01,HIGH_SIDE_595);
+					// send_data_on_595((0x01<<i)|0x01,HIGH_SIDE_595);
+					BUZZER_ON;
 				}
 				else
 				{
@@ -288,12 +289,14 @@ void play_panic_buzzer(void)
 		state = 0;
 	}
 }
+
 void Stop_Buzzer()
 {
 	g_Buzzer_Threshold = 0;
 	g_Buzzer_toggle_interval	 = 0;
 	f.g_buzzer_ON = 0;
 }
+
 void Run_Buzzer()
 {
 	static int cnt;
@@ -323,6 +326,7 @@ void Run_Buzzer()
 		flag=0;
 		cnt=0;
 		f.g_buzzer_ON = 0;
+		BUZZER_OFF;
 		RGB_Buzzer_Control(0,0,0,0);
 	}
 }

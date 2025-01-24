@@ -36,6 +36,9 @@ void gpio_configuration_init()
     esp_rom_gpio_pad_select_gpio(SWITCH_7); gpio_set_direction(SWITCH_7, GPIO_MODE_INPUT); gpio_pullup_en(SWITCH_7);
 
     //buzzer
+    esp_rom_gpio_pad_select_gpio(BUZZER); gpio_set_direction(BUZZER, GPIO_MODE_OUTPUT);
+
+    //  BACKLIGHT
     esp_rom_gpio_pad_select_gpio(BACKLIGHT); gpio_set_direction(BACKLIGHT, GPIO_MODE_OUTPUT);
 
     //charging control
@@ -44,7 +47,6 @@ void gpio_configuration_init()
     //SWITCH
     button_gpio_init();
 
-
     // 74HC595
     esp_rom_gpio_pad_select_gpio(PWR_EN_595); gpio_set_direction(PWR_EN_595 , GPIO_MODE_OUTPUT);
     esp_rom_gpio_pad_select_gpio(DS); gpio_set_direction(DS , GPIO_MODE_OUTPUT);
@@ -52,11 +54,11 @@ void gpio_configuration_init()
     esp_rom_gpio_pad_select_gpio(STCP1); gpio_set_direction(STCP1, GPIO_MODE_OUTPUT);
     esp_rom_gpio_pad_select_gpio(SHCP); gpio_set_direction(SHCP, GPIO_MODE_OUTPUT);
     Disable_595_power();
-    // BUZZER_OFF;
+    BUZZER_OFF;
 
-    // SWITCH
-    esp_rom_gpio_pad_select_gpio(REFILL_SWITCH); gpio_set_direction(REFILL_SWITCH, GPIO_MODE_INPUT);//gpio_set_level(REFILL_SWITCH,0);gpio_hold_en(REFILL_SWITCH);
-    esp_rom_gpio_pad_select_gpio(BOTTLE_SWITCH); gpio_set_direction(BOTTLE_SWITCH, GPIO_MODE_INPUT);//gpio_set_level(BOTTLE_SWITCH,0);gpio_hold_en(BOTTLE_SWITCH);
+
+    // esp_rom_gpio_pad_select_gpio(REFILL_SWITCH); gpio_set_direction(REFILL_SWITCH, GPIO_MODE_INPUT);//gpio_set_level(REFILL_SWITCH,0);gpio_hold_en(REFILL_SWITCH);
+    // esp_rom_gpio_pad_select_gpio(BOTTLE_SWITCH); gpio_set_direction(BOTTLE_SWITCH, GPIO_MODE_INPUT);//gpio_set_level(BOTTLE_SWITCH,0);gpio_hold_en(BOTTLE_SWITCH);
 
     //RTC
     rtcc_gpio_init();
@@ -484,9 +486,9 @@ void Buzzer_Pattern(uint8_t Pattern_duration)
     // }
     // for (size_t i = 0; i < count; i++)
     // {
-        f.g_buzzer_ON=1;
+        f.g_buzzer_ON = 1;
         vTaskDelay(Pattern_duration/portTICK_PERIOD_MS);
-        f.g_buzzer_ON=0;
+        f.g_buzzer_ON = 0;
     //}   
 }
 

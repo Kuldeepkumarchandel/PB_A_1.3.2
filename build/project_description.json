@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "PILL_BOX_28",
-    "project_version":    "7221137-dirty",
+    "project_version":    "e7be0c3-dirty",
     "project_path":       "D:/Alwin_Projects/Pill-Box/PB_A_1.3.2/PB_A_1.3.2",
     "idf_path":           "C:/Users/chand/esp/v5.2.1/esp-idf",
     "build_dir":          "D:/Alwin_Projects/Pill-Box/PB_A_1.3.2/PB_A_1.3.2/build",

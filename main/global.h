@@ -9,9 +9,9 @@ extern char g_matched_id_index;
 #define ON          1
 
 // Add File transfer Protocol
-#define FIRMWARE_VERSION                "PB28_NV0.9.3L"
-#define HW_VERSION                      "PB_A_1.3"
-#define SW_VERSION                      "NV0.9.3L"
+#define FIRMWARE_VERSION                "PB28_H3.2_V0.1"
+#define HW_VERSION                      "PB_A_1.3.2"
+#define SW_VERSION                      "H3.2_V0.1"
 #define MODEL                           "PB28"
 #define MAXIMUM_SUPPORTED_BOXES         28
 

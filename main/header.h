@@ -4,12 +4,19 @@
 
 
 #define BATT_ADC                    GPIO_NUM_1
-#define SCLL                        GPIO_NUM_42
+#define SCLL                        GPIO_NUM_43
 #define SDAA                        GPIO_NUM_41
+
+#define BUZZER                      GPIO_NUM_42
+#define BUZZER_ON                   gpio_set_level(BUZZER,1);
+#define BUZZER_OFF                  gpio_set_level(BUZZER,0);
+
+#define GAIN_SLOT_CTRL1             GPIO_NUM_44
 
 #define CHRG_CTRL                   GPIO_NUM_4
 #define CHARGING_ENABLE             gpio_set_level(CHRG_CTRL,0);
 #define CHARGING_DISABLE            gpio_set_level(CHRG_CTRL,1);
+
 #define SWITCH_A                    GPIO_NUM_5        
 #define SWITCH_B                    GPIO_NUM_6
 #define SWITCH_C                    GPIO_NUM_7
@@ -33,7 +40,6 @@
 #define AUDIO_LRCLK                 GPIO_NUM_45
 
 #define DS                          GPIO_NUM_48
-// #define DS2                         GPIO_NUM_34
 #define PWR_EN_595                  GPIO_NUM_47
 
 
@@ -45,7 +51,6 @@
 #define SHCP                        GPIO_NUM_36
 #define STCP1                       GPIO_NUM_38
 
-#define BACKLIGHT                   GPIO_NUM_26
 
 #define PWR_OFF_ON_SWITCH           GPIO_NUM_21
 #define MODE_SWITCH                 GPIO_NUM_2
@@ -63,6 +68,7 @@
 #define BOOST_PWR_EN                GPIO_NUM_46
 
 // BACKLIGHT
+#define BACKLIGHT                   GPIO_NUM_26
 #define BACKLIGHT_ON                gpio_set_level(BACKLIGHT,1);
 #define BACKLIGHT_OFF               gpio_set_level(BACKLIGHT,0);
 
