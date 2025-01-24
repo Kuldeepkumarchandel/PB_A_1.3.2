@@ -1,0 +1,41 @@
+
+#---------------------------------------------------------------------------
+# Project related configuration options
+#---------------------------------------------------------------------------
+
+PROJECT_NAME           = MyProject
+OUTPUT_DIRECTORY       = ./docs
+INPUT                  = ./src
+
+#---------------------------------------------------------------------------
+# Build related configuration options
+#---------------------------------------------------------------------------
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+#---------------------------------------------------------------------------
+# Configuration options related to the input files
+#---------------------------------------------------------------------------
+
+RECURSIVE              = YES
+
+EXCLUDE_PATTERNS       =
+
+#---------------------------------------------------------------------------
+# Configuration options related to the HTML output
+#---------------------------------------------------------------------------
+
+HTML_OUTPUT            = html/
+HTML_FILE_EXTENSION    =
+HTML_HEADER            =
+HTML_FOOTER            =
+HTML_STYLESHEET        =
+
+ENABLE_SEARCH          = YES
+
+GENERATE_XML           = NO
+
+ALPHABETICAL_INDEX     = YES
+
+OPTIMIZE_OUTPUT_FOR_C  = YES

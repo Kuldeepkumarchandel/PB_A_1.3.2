@@ -1,0 +1,9 @@
+# Espressif ESP32 Partition Table,,,,,
+# nvs 16KB, otadata 8KB, phy_int 4KB, ota_0 1MB, ota_1  1MB, storage  4MB, OBD	1MB, Left 960KB
+# Name        ,     Type  ,   SubType ,    Offset  ,     Size     ,   Flags
+  nvs         ,     data  ,   nvs     ,    0x9000  ,     0x4000   ,
+  otadata     ,     data  ,   ota     ,            ,     0x2000   ,
+  phy_init    ,     data  ,   phy     ,    0xf000  ,     0x1000   ,
+  ota_0       ,     0     ,   ota_0   ,            ,     1M       ,
+  ota_1       ,     0     ,   ota_1   ,            ,     1M       ,
+  storage     ,     data  , littlefs  ,            ,     4M       ,
