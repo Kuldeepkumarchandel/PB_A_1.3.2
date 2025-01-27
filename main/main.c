@@ -203,9 +203,9 @@ void app_main(void)
     ESP_LOGI("PB INIT ", "Done"); 
     PB_INIT();
     // ONLY FOR TESTING BLE DATA
-    char tempp[] = "CFG,Pill-Box,691900,005M,1727867270,003,00-1727867275,14-1727867280,24-1727867290,2,0,060S,030M,060S,080S,060S,090S,20,0,*12,&";
+    // char tempp[] = "CFG,Pill-Box,691900,005M,1727867270,003,00-1727867275,14-1727867280,24-1727867290,2,0,060S,030M,060S,080S,060S,090S,20,0,*12,&";
     // char tempp[] = "CFG,Pill-Box,691900,005M,1734206164,000,2,0,060S,030M,060S,080S,060S,090S,20,0,*12,&";
-    Decode_save_data((char*)&tempp[0]);
+    // Decode_save_data((char*)&tempp[0]);
     // fatch_data(tempp);
 
     if ((reset_reason == ESP_RST_POWERON) || (just_pwr_on == 1))
